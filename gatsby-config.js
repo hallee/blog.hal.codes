@@ -1,28 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: `blog.hal.codes`,
-    description: `A blog, mostly about software development, usually iOS and Swift related`,
-    author: `Hal Lee`,
+    title: 'blog.hal.codes',
+    description: 'A blog, mostly about software development, usually iOS and Swift related',
+    author: 'Hal Lee',
   },
   plugins: [
     {
-      resolve: "gatsby-source-graphql",
+      resolve: 'gatsby-source-graphql',
       options: {
-        typeName: "RootQueryType",
-        fieldName: "blog",
-        url: "http://localhost:8080/graphql",
+        typeName: 'RootQueryType',
+        fieldName: 'blog',
+        url: 'http://localhost:8080/graphql',
       },
     },
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    'gatsby-plugin-offline'
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-offline',
   ],
-}
+};

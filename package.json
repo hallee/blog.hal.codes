@@ -24,10 +24,19 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "eslint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
+    "eslint:fix": "eslint --fix --ext .js,.jsx --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hallee/blog.hal.codes"
+  },
+  "devDependencies": {
+    "eslint": "5.3.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0"
   }
 }
