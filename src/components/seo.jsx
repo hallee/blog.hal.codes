@@ -20,17 +20,17 @@ function SEO({
 }) {
   return (
     <StaticQuery
-      query={detailsQuery}
-      render={(data) => {
+      query={ detailsQuery }
+      render={ (data) => {
         const metaDescription = description || data.site.siteMetadata.description;
         return (
           <Helmet
-            htmlAttributes={{
+            htmlAttributes={ {
               lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            meta={[
+            } }
+            title={ title }
+            titleTemplate={ `%s | ${data.site.siteMetadata.title}` }
+            meta={ [
               {
                 name: 'description',
                 content: metaDescription,
@@ -72,10 +72,10 @@ function SEO({
                   }
                   : [],
               )
-              .concat(meta)}
+              .concat(meta) }
           />
         );
-      }}
+      } }
     />
   );
 }

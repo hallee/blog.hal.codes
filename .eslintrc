@@ -1,7 +1,6 @@
 {
   "extends": "airbnb",
   "rules": {
-    "object-curly-spacing": ["error", "always"],
-    "array-bracket-spacing": ["error", "never"]
+    "react/jsx-curly-spacing": [2, "always"]
   }
 }
