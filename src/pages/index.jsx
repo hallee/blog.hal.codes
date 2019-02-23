@@ -5,22 +5,19 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
+import PostList from '../components/PostList/PostList';
 
 const IndexPage = ({ data }) => {
   const { title } = data.site.siteMetadata;
-  const { nodes } = data.blog.blogPosts;
+  const {
+    nodes = null,
+    pageInfo = null,
+  } = data.blog.blogPosts;
   return (
     <Layout>
-      <SEO title="Home" keywords={ ['gatsby', 'application', 'react'] } />
+      <SEO keywords={ ['gatsby', 'application', 'react'] } />
       <h1>{ title }</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      {nodes.map(node => (
-        <div>
-          <h2>{ node.title }</h2>
-          <p>{ node.body }</p>
-        </div>
-      ))}
+      <PostList nodes={ nodes } pageInfo={ pageInfo } />
       <div style={ { maxWidth: '300px', marginBottom: '1.45rem' } }>
         <Image />
       </div>
@@ -38,6 +35,10 @@ export const pageQuery = graphql`
   }
   blog {
     blogPosts(page: 1) {
+      pageInfo {
+        current
+        total
+      }
       nodes {
         title
         body
