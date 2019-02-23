@@ -8,9 +8,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-graphql',
       options: {
-        typeName: 'RootQueryType',
+        typeName: 'BlogPost',
         fieldName: 'blog',
-        url: 'http://localhost:8080/graphql',
+        url: 'https://api.hal.codes/graphql',
       },
     },
     'gatsby-plugin-react-helmet',
