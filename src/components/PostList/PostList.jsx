@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-const PostList = ({ nodes, pageInfo }) => (
+
+const PostList = ({ nodes }) => (
   <section>
     { nodes.map(node => (
       <div>
-        <h2>{ node.title }</h2>
+        <h2>
+          <Link to={ node.slug }>{ node.title }</Link>
+        </h2>
         <p>{ node.body }</p>
       </div>
     ))}

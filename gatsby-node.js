@@ -1,1 +1,1 @@
-exports.createPages = require('./src/pagination/create-pages');
+exports.createPages = require('./src/generation/create-pages');
