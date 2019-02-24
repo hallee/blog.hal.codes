@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 const PostList = ({ nodes }) => (
   <section>
     { nodes.map(node => (
-      <div>
+      <div key={ node }>
         <h2>
           <Link to={ node.slug }>{ node.title }</Link>
         </h2>
@@ -18,10 +18,6 @@ const PostList = ({ nodes }) => (
 
 PostList.propTypes = {
   nodes: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-  pageInfo: PropTypes.shape({
-    current: PropTypes.number.isRequired,
-    total: PropTypes.number.isRequired,
-  }).isRequired,
 };
 
 export default PostList;
