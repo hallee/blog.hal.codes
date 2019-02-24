@@ -1,1 +1,0 @@
-const IndexPage = ({ data }) => {
