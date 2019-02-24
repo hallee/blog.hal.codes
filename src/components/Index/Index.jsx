@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../Layout/Layout';
-import Image from '../Image/Image';
 import SEO from '../SEO/SEO';
 import PostList from '../PostList/PostList';
 import Pagination from '../Pagination/Pagination';
@@ -25,7 +24,6 @@ const IndexTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO keywords={ ['gatsby', 'application', 'react'] } />
-      {/* <h1>{ pageTitle }</h1> */}
       <PostList nodes={ nodes } />
       <Pagination
         currentPage={ currentPage }

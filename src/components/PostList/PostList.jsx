@@ -10,7 +10,7 @@ const PostList = ({ nodes }) => (
         <h2>
           <Link to={ node.slug }>{ node.title }</Link>
         </h2>
-        <p>{ node.body }</p>
+        { node.body }
       </div>
     ))}
   </section>
