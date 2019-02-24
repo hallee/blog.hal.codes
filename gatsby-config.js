@@ -3,6 +3,7 @@ module.exports = {
     title: 'blog.hal.codes',
     description: 'A blog, mostly about software development, usually iOS and Swift related',
     author: 'Hal Lee',
+    siteUrl: 'https://blog.hal.codes',
   },
   plugins: [
     {
@@ -24,5 +25,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-offline',
+    'gatsby-plugin-sitemap',
   ],
 };
