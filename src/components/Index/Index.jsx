@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from '../Layout/Layout';
@@ -7,11 +8,8 @@ import PostList from '../PostList/PostList';
 import Pagination from '../Pagination/Pagination';
 
 const IndexTemplate = ({ data, pageContext }) => {
-  const { siteTitle } = data.site.siteMetadata;
-
   const {
     currentPage,
-    perPage,
     prevPagePath,
     nextPagePath,
     hasPrevPage,
@@ -54,5 +52,10 @@ export const query = graphql`
     }
   }
 `;
+
+IndexTemplate.propTypes = {
+  data: PropTypes.shape(PropTypes.object).isRequired,
+  pageContext: PropTypes.shape(PropTypes.object).isRequired,
+};
 
 export default IndexTemplate;
