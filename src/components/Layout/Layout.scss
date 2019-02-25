@@ -1,9 +1,11 @@
 html {
+  background: #EFEFEF;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
 }
 
 body {
+  color: #222;
   font-size: 1.8rem;
   font-family: "SF Compact Display",
                -apple-system,
@@ -19,10 +21,15 @@ body {
   line-height: 1.4;
 }
 
-/*
-          style={ {
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          } }*/
+h2 {
+  font-size: 4rem;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
