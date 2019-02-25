@@ -1,0 +1,23 @@
+@import "../Layout/Layout.scss";
+
+.pagination {
+  padding: 1rem;
+  margin: 12rem auto 4rem auto;
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    font-family: $heading-font-stack;
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 0.6rem 1.6rem;
+    opacity: 0.5;
+    transition: opacity .2s;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}

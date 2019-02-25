@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
+import styles from './Pagination.module.scss';
+
 const Pagination = ({
   currentPage,
   prevPagePath,
@@ -9,14 +11,14 @@ const Pagination = ({
   hasPrevPage,
   hasNextPage,
 }) => (
-  <section>
+  <section className={ styles.pagination }>
     <div>
       { hasPrevPage && (
         <Link
           rel="prev"
           to={ prevPagePath }
         >
-          Previous
+          Newer
         </Link>
       )}
     </div>
@@ -26,7 +28,7 @@ const Pagination = ({
           rel="next"
           to={ nextPagePath }
         >
-          Next
+          Older
         </Link>
       )}
     </div>

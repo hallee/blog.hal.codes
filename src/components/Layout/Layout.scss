@@ -11,10 +11,16 @@ $font-stack: -apple-system,
 
 $heading-font-stack: "SF Compact Display", $font-stack;
 
+$break-small: "only screen and (max-width: 768px)";
+
 html {
   background: #EFEFEF;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
+
+  @media #{$break-small} {
+    font-size: 0.6rem;
+  }
 }
 
 body {
@@ -56,6 +62,14 @@ header {
   padding: 1rem;
   margin: 2.8rem auto 4.8rem auto;
   max-width: 80rem;
+
+  @media #{$break-small} {
+    margin: 0 auto;
+    svg {
+      width: 145px;
+      height: 40px;
+    }
+  }
 }
 
 section article {
@@ -87,6 +101,10 @@ a {
 
 p {
   margin: 1.4rem 0 1.4rem 0;
+}
+
+::selection {
+  background: #FFFACE;
 }
 
 div, article {
