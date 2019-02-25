@@ -1,3 +1,16 @@
+$font-stack: -apple-system,
+             BlinkMacSystemFont,
+             "Segoe UI",
+             Roboto,
+             Helvetica,
+             Arial,
+             sans-serif,
+             "Apple Color Emoji",
+             "Segoe UI Emoji",
+             "Segoe UI Symbol";
+
+$heading-font-stack: "SF Compact Display", $font-stack;
+
 html {
   background: #EFEFEF;
   font-size: 62.5%;
@@ -6,19 +19,9 @@ html {
 
 body {
   color: #222;
-  font-size: 1.8rem;
-  font-family: "SF Compact Display",
-               -apple-system,
-               BlinkMacSystemFont,
-               "Segoe UI",
-               Roboto,
-               Helvetica,
-               Arial,
-               sans-serif,
-               "Apple Color Emoji",
-               "Segoe UI Emoji",
-               "Segoe UI Symbol";
-  line-height: 1.5;
+  font-size: 2rem;
+  font-family: $font-stack;
+  line-height: 1.4;
 }
 
 body:after {
@@ -29,22 +32,30 @@ body:after {
   content: '';
   display: block;
   pointer-events: none;
-  top: 8px;
+  top: 6px;
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(http://basehold.it/i/27);
-  background-size: 4px 27px;
+  background: url(http://basehold.it/i/28);
+  background-size: 4px 28px;
 }
 
 body:active:after {
   display: none;
 }
 
+header {
+  margin: 0 auto 4.6rem auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-stack;
+}
+
 h2 {
-  font-size: 4rem;
-  padding-bottom: 3rem;
-  line-height: 1.1;
+  font-size: 4.4rem;
+  line-height: 1.2727272727;
+  margin-bottom: 3rem;
 }
 
 a {
@@ -57,12 +68,16 @@ a {
 }
 
 div, article {
-  max-width: 100rem;
+  max-width: 120rem;
   margin: 0 auto;
   padding: 1rem;
 
+  img {
+    width: 100%;
+    margin: 4rem auto;
+  }
+
   p, h1, h2, h3, h4, h5, h6, ul, code, header {
     max-width: 80rem;
-    margin: 0 auto;
   }
 }
