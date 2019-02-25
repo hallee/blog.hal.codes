@@ -7,7 +7,9 @@ const Post = ({ pageContext }) => {
   const { node } = pageContext;
   return (
     <Layout>
-      <PostBody node={ node } />
+      <section>
+        <PostBody node={ node } />
+      </section>
     </Layout>
   );
 };
