@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
 
+import PostBody from '../Post/PostBody';
 
 const PostList = ({ nodes }) => (
   <section>
     { nodes.map(node => (
-      <div key={ node }>
-        <h2>
-          <Link to={ node.slug }>{ node.title }</Link>
-        </h2>
-        { node.body }
-      </div>
+      <PostBody
+        node={ node }
+        titleLink={ node.slug }
+        key={ node }
+      />
     ))}
   </section>
 );

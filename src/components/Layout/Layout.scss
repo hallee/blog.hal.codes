@@ -33,3 +33,14 @@ a {
     text-decoration: underline;
   }
 }
+
+div, article {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1rem;
+
+  p, h1, h2, h3, h4, h5, h6, ul, code {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+}
