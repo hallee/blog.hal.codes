@@ -12,7 +12,7 @@ const PostBody = ({ node, titleLink }) => {
       <h2>
         { title }
       </h2>
-      { node.body }
+      <p>{ node.body }</p>
     </article>
   );
 };

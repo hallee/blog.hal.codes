@@ -18,11 +18,33 @@ body {
                "Apple Color Emoji",
                "Segoe UI Emoji",
                "Segoe UI Symbol";
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+body:after {
+  position: absolute;
+  width: auto;
+  height: auto;
+  z-index: 9999;
+  content: '';
+  display: block;
+  pointer-events: none;
+  top: 8px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(http://basehold.it/i/27);
+  background-size: 4px 27px;
+}
+
+body:active:after {
+  display: none;
 }
 
 h2 {
   font-size: 4rem;
+  padding-bottom: 3rem;
+  line-height: 1.1;
 }
 
 a {
@@ -39,7 +61,7 @@ div, article {
   margin: 0 auto;
   padding: 1rem;
 
-  p, h1, h2, h3, h4, h5, h6, ul, code {
+  p, h1, h2, h3, h4, h5, h6, ul, code, header {
     max-width: 80rem;
     margin: 0 auto;
   }

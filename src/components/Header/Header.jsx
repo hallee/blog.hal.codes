@@ -5,13 +5,11 @@ import Logo from '../../assets/logo.svg';
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div>
-      <h1 style={ { margin: 0 } }>
-        <Link to="/">
-          <Logo alt={ siteTitle } />
-        </Link>
-      </h1>
-    </div>
+    <h1 style={ { margin: 0 } }>
+      <Link to="/">
+        <Logo alt={ siteTitle } />
+      </Link>
+    </h1>
   </header>
 );
 
