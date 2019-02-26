@@ -35,5 +35,14 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['PlexSans:n4,i4', 'Iosevka:n4', 'BasierSquare:n7'],
+          urls: ['fonts/fonts.css'],
+        },
+      },
+    },
   ],
 };

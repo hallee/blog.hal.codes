@@ -1,4 +1,5 @@
-$font-stack: -apple-system,
+$font-stack: "PlexSans",
+             -apple-system,
              BlinkMacSystemFont,
              "Segoe UI",
              Roboto,
@@ -9,7 +10,7 @@ $font-stack: -apple-system,
              "Segoe UI Emoji",
              "Segoe UI Symbol";
 
-$heading-font-stack: "SF Compact Display", $font-stack;
+$heading-font-stack: "BasierSquare", "SF Compact Display", $font-stack;
 
 $break-small: "only screen and (max-width: 768px)";
 
@@ -18,8 +19,12 @@ $small-width: 68rem;
 
 $padding: 2.4rem;
 
+$background-color: #EFEFEF;
+$foreground-color: #222;
+$selection-color: #FFFACE;
+
 html {
-  background: #EFEFEF;
+  background: $background-color;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
 
@@ -29,7 +34,7 @@ html {
 }
 
 body {
-  color: #222;
+  color: $foreground-color;
   font-size: 2rem;
   font-family: $font-stack;
   line-height: 1.4;
@@ -98,7 +103,7 @@ h2 {
 }
 
 a {
-  color: #222;
+  color: $foreground-color;
   text-decoration: none;
 
   &:hover {
@@ -111,7 +116,7 @@ p {
 }
 
 ::selection {
-  background: #FFFACE;
+  background: $selection-color;
 }
 
 div, article {
