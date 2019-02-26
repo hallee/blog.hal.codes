@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import SEO from '../SEO/SEO';
 
-const PostBody = ({ node, titleLink }) => {
+const PostBody = ({ node, titleLink, preview }) => {
   const title = titleLink ? <Link to={ titleLink }>{ node.title }</Link> : node.title;
 
   return (
@@ -21,11 +21,13 @@ const PostBody = ({ node, titleLink }) => {
 
 PostBody.defaultProps = {
   titleLink: null,
+  preview: false,
 };
 
 PostBody.propTypes = {
   node: PropTypes.shape(PropTypes.object.isRequred).isRequired,
   titleLink: PropTypes.string,
+  preview: PropTypes.bool,
 };
 
 
