@@ -14,7 +14,7 @@ $heading-font-stack: "BasierSquare", "SF Compact Display", $font-stack;
 
 $break-small: "only screen and (max-width: 768px)";
 
-$large-width: 140rem;
+$large-width: 120rem;
 $small-width: 68rem;
 
 $padding: 2.4rem;
@@ -43,12 +43,6 @@ body {
   justify-content: center;
 }
 
-body > div {
-  width: 100%;
-  max-width: $large-width;
-  overflow-x: hidden;
-}
-
 header {
   padding: $padding;
   margin: 0 auto 4.8rem auto;
@@ -66,7 +60,7 @@ header {
 section article {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   padding: $padding;
   margin-bottom: 14rem;
@@ -99,22 +93,21 @@ p {
   background: $selection-color;
 }
 
+@mixin bust-out($margin: $padding) {
+  position: absolute;
+  width: calc(100% - #{$margin} * 2);
+  left: 50vw;
+  transform: translateX(calc(-50% - #{$margin}));
+  max-width: $large-width;
+  margin: 0 $margin;
+}
+
 div, article {
+  max-width: $small-width;
+
   img {
-    width: 100%;
-    margin: 1.4rem auto;
-    object-fit: cover;
-    border-radius: 0.4rem;
-
-    @media #{$break-small} {
-      border-radius: 0;
-      width: 100vw;
-      margin-left: -$padding;
-    }
-  }
-
-  h1, h2, h3, h4, h5, h6, span.kicker, span.post-date {
-    width: 100%;
+    border-radius: 4px;
+    @include bust-out;
   }
 
   span.kicker {
@@ -126,14 +119,5 @@ div, article {
     opacity: 0.5;
     margin-bottom: 5.5rem;
     margin-left: 0.4rem;
-  }
-
-  p, code, h1, h2, h3, h4, h5, h6, span.kicker, span.post-date {
-    width: 100%;
-    max-width: $small-width;
-
-    @media #{$break-small} {
-      max-width: 60rem;
-    }
   }
 }
