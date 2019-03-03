@@ -107,6 +107,13 @@ p {
     margin-right: calc(-100vw / 2 + #{$padding});
     width: calc(100vw - #{$padding} * 2);
   }
+
+  @media #{$break-small} {
+    margin-left: calc(-100vw / 2);
+    margin-right: calc(-100vw / 2);
+    width: 100vw;
+    border-radius: 0;
+  }
 }
 
 div, article {
@@ -115,6 +122,27 @@ div, article {
   img {
     border-radius: 4px;
     @include bust-out;
+  }
+
+  pre {
+    @include bust-out;
+    display: flex;
+    justify-content: center;
+
+    code {
+      font-family: 'Iosevka' !important;
+      font-size: 1.8rem;
+      background: #282c34 !important;
+      border-radius: 4px;
+      padding: 2.4rem 3.6rem;
+      overflow: scroll;
+
+      @media #{$break-small} {
+        width: 100%;
+        padding: $padding;
+        border-radius: 0;
+      }
+    }
   }
 
   span.kicker {
