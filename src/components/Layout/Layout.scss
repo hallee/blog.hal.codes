@@ -35,9 +35,9 @@ html {
 
 body {
   color: $foreground-color;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-family: $font-stack;
-  line-height: 1.4;
+  line-height: 1.5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,30 +49,9 @@ body > div {
   overflow-x: hidden;
 }
 
-// body:after {
-//   position: absolute;
-//   width: auto;
-//   height: auto;
-//   z-index: 9999;
-//   content: '';
-//   display: block;
-//   pointer-events: none;
-//   top: 16px;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   background: url(http://basehold.it/i/28);
-//   background-size: 4px 28px;
-//   background-repeat: repeat;
-// }
-
-// body:active:after {
-//   display: none;
-// }
-
 header {
   padding: $padding;
-  margin: 2.8rem auto 4.8rem auto;
+  margin: 0 auto 4.8rem auto;
   max-width: $small-width;
 
   @media #{$break-small} {
@@ -90,6 +69,7 @@ section article {
   align-items: center;
   justify-content: center;
   padding: $padding;
+  margin-bottom: 14rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,8 +78,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   font-size: 4.4rem;
-  line-height: 1.2727272727;
-  margin: 2.8rem 0 1.4rem 0;
+  line-height: 1.1;
+  margin: 0.2rem 0 0.6rem 0;
 }
 
 a {
@@ -133,7 +113,22 @@ div, article {
     }
   }
 
-  p, h1, h2, h3, h4, h5, h6, ul, code {
+  h1, h2, h3, h4, h5, h6, span.kicker, span.post-date {
+    width: 100%;
+  }
+
+  span.kicker {
+    color: #5964E4;
+    margin-left: 0.4rem;
+  }
+
+  span.post-date {
+    opacity: 0.5;
+    margin-bottom: 5.5rem;
+    margin-left: 0.4rem;
+  }
+
+  p, code, h1, h2, h3, h4, h5, h6, span.kicker, span.post-date {
     width: 100%;
     max-width: $small-width;
 
