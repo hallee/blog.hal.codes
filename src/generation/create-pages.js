@@ -6,7 +6,7 @@ const createPages = async ({ graphql, actions }) => {
   const pages = await graphql(`
     {
       blog {
-        blogPosts(per: 1) {
+        blogPosts(per: 2) {
           pageInfo {
             size
             total
@@ -17,8 +17,9 @@ const createPages = async ({ graphql, actions }) => {
   `);
 
   const { size, total } = pages.data.blog.blogPosts.pageInfo;
+  const pageCount = Math.max(total, 1);
 
-  for (let i = 1; i <= total; i += 1) {
+  for (let i = 1; i <= pageCount; i += 1) {
     createPage({
       path: i === 1 ? '/' : `/page/${i}`,
       component: path.resolve('./src/components/Index/Index.jsx'),
@@ -28,7 +29,7 @@ const createPages = async ({ graphql, actions }) => {
         prevPagePath: i <= 2 ? '/' : `/page/${i - 1}`,
         nextPagePath: `/page/${i + 1}`,
         hasPrevPage: i !== 1,
-        hasNextPage: i !== total,
+        hasNextPage: i < total,
       },
     });
   }
@@ -39,7 +40,9 @@ const createPages = async ({ graphql, actions }) => {
         blogPosts {
           nodes {
             title
-            body
+            body {
+              html
+            }
             slug
           }
         }

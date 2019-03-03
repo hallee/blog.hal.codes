@@ -16,7 +16,7 @@ const IndexTemplate = ({ data, pageContext }) => {
     hasNextPage,
   } = pageContext;
 
-  const { nodes } = data.blog.blogPosts;
+  const nodes = data.blog.blogPosts ? data.blog.blogPosts.nodes : null;
   // const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
@@ -45,7 +45,9 @@ export const query = graphql`
       blogPosts(per: $perPage, page: $currentPage) {
         nodes {
           title
-          body
+          body {
+            html
+          }
           slug
         }
       }
@@ -53,9 +55,14 @@ export const query = graphql`
   }
 `;
 
+IndexTemplate.defaultProps = {
+  data: null,
+  pageContext: null,
+};
+
 IndexTemplate.propTypes = {
-  data: PropTypes.shape(PropTypes.object).isRequired,
-  pageContext: PropTypes.shape(PropTypes.object).isRequired,
+  data: PropTypes.shape(PropTypes.object),
+  pageContext: PropTypes.shape(PropTypes.object),
 };
 
 export default IndexTemplate;

@@ -5,19 +5,25 @@ import PostBody from '../Post/PostBody';
 
 const PostList = ({ nodes }) => (
   <section>
-    { nodes.map(node => (
-      <PostBody
-        node={ node }
-        titleLink={ node.slug }
-        key={ node }
-        preview={ true }
-      />
-    ))}
+    { nodes && (
+      nodes.map(node => (
+        <PostBody
+          node={ node }
+          titleLink={ node.slug }
+          key={ node }
+          preview={ true }
+        />
+      ))
+    )}
   </section>
 );
 
+PostList.defaultProps = {
+  nodes: [],
+};
+
 PostList.propTypes = {
-  nodes: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  nodes: PropTypes.arrayOf(PropTypes.object.isRequired),
 };
 
 export default PostList;

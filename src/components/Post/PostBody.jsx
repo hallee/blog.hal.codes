@@ -5,16 +5,16 @@ import SEO from '../SEO/SEO';
 
 const PostBody = ({ node, titleLink, preview }) => {
   const title = titleLink ? <Link to={ titleLink }>{ node.title }</Link> : node.title;
-
+  const html = { __html: node.body.html };
   return (
     <article>
       <SEO keywords={ ['gatsby', 'application', 'react'] } />
+      <span className="kicker">A smarter way to storyboard</span>
       <h2>
-        { title } and more
+        { title }
       </h2>
-      <p>{ node.body }</p>
-      <img src="https://static1.squarespace.com/static/50271a61c4aab6c54f9af5ee/t/568e06910e4c1157fa0d1127/1452148376624/?format=2500w" />
-      <p>{ node.body }</p>
+      <span className="post-date">January 31, 2019</span>
+      <div dangerouslySetInnerHTML={ html } />
     </article>
   );
 };
