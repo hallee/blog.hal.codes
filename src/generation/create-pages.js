@@ -40,6 +40,7 @@ const createPages = async ({ graphql, actions }) => {
         blogPosts {
           nodes {
             title
+            kicker
             body {
               html
             }

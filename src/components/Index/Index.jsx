@@ -45,6 +45,7 @@ export const query = graphql`
       blogPosts(per: $perPage, page: $currentPage) {
         nodes {
           title
+          kicker
           body {
             html
           }
