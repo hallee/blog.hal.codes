@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import Fragment from 'react-dom-fragment';
 import SEO from '../SEO/SEO';
 
 const PostBody = ({ node, titleLink, preview }) => {
@@ -9,12 +10,12 @@ const PostBody = ({ node, titleLink, preview }) => {
   return (
     <article>
       <SEO keywords={ ['gatsby', 'application', 'react'] } />
-      <span className="kicker">A smarter way to storyboard</span>
+      <span className="kicker">{ node.kicker }</span>
       <h2>
         { title }
       </h2>
       <span className="post-date">January 31, 2019</span>
-      <div dangerouslySetInnerHTML={ html } />
+      <Fragment dangerouslySetInnerHTML={ html } />
     </article>
   );
 };
