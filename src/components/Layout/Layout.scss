@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
   font-size: 4.4rem;
   line-height: 1.1;
-  margin: 0.2rem 0 0.6rem 0;
+  margin: 0.2rem 0;
 }
 
 a {
@@ -93,7 +93,7 @@ a {
 }
 
 p {
-  margin: 1.4rem 0 1.4rem 0;
+  margin: 1.65rem 0 1.65rem 0;
 }
 
 ::selection {
@@ -162,7 +162,7 @@ div, article {
 
   span.post-date {
     opacity: 0.5;
-    margin-bottom: 5.5rem;
+    margin-bottom: 1.65rem;
     margin-left: 0.4rem;
   }
 }
