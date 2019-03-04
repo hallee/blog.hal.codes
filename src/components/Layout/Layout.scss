@@ -15,7 +15,7 @@ $heading-font-stack: "BasierSquare", "SF Compact Display", $font-stack;
 $break-small: "only screen and (max-width: 768px)";
 
 $large-width: 1200px;
-$small-width: 680px;
+$small-width: 700px;
 
 $padding: 2.4rem;
 
@@ -136,6 +136,9 @@ div, article {
     @include bust-out;
     display: flex;
     justify-content: center;
+    ::-webkit-scrollbar-corner, ::-webkit-scrollbar {
+      display: none;
+    }
 
     code {
       background: #2a2734;
@@ -145,6 +148,7 @@ div, article {
       border-radius: $border-radius;
       padding: 2.4rem 3.6rem;
       overflow: scroll;
+
       @include shadow;
 
       @media #{$break-small} {

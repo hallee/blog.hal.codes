@@ -77,6 +77,10 @@ pre[class*="language-"] {
   color: #fec38f;
 }
 
+.token.keyword + .token.builtin {
+  color: #f1ebff;
+}
+
 .token.function {
   color: #f1ebff;
 }
