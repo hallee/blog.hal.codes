@@ -15,8 +15,8 @@
 @font-face {
   font-family: 'Iosevka';
   font-weight: 400;
-  src: url('iosevka-brew-regular.woff2') format('woff2'),
-       url('iosevka-brew-regular.ttf') format('truetype');
+  src: url('iosevka-ss09-regular.woff2') format('woff2'),
+       url('iosevka-ss09-regular.ttf') format('truetype');
 }
 @font-face {
   font-family: 'BasierSquare';

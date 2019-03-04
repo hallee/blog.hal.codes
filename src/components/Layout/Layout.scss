@@ -23,6 +23,13 @@ $background-color: #EFEFEF;
 $foreground-color: #222;
 $selection-color: #FFFACE;
 
+$border-radius: 6px;
+
+@mixin shadow {
+  // box-shadow: 0 1rem 3rem -1rem #2a273466,
+  //             0 1.2rem 2rem -0.6rem #2a273444;
+}
+
 html {
   background: $background-color;
   font-size: 62.5%;
@@ -120,8 +127,9 @@ div, article {
   max-width: $small-width;
 
   img {
-    border-radius: 4px;
+    border-radius: $border-radius;
     @include bust-out;
+    @include shadow;
   }
 
   pre {
@@ -130,12 +138,14 @@ div, article {
     justify-content: center;
 
     code {
-      font-family: 'Iosevka' !important;
+      background: #2a2734;
+      color: #f1ebff;
+      font-family: 'Iosevka', Monaco, monospace;
       font-size: 1.8rem;
-      background: #282c34 !important;
-      border-radius: 4px;
+      border-radius: $border-radius;
       padding: 2.4rem 3.6rem;
       overflow: scroll;
+      @include shadow;
 
       @media #{$break-small} {
         width: 100%;
