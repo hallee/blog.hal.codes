@@ -141,6 +141,7 @@ div, article {
     }
 
     code {
+      min-width: calc(#{$small-width} - (#{$padding} + 3.6rem) * 2);
       background: #2a2734;
       color: #f1ebff;
       font-family: 'Iosevka', Monaco, monospace;
