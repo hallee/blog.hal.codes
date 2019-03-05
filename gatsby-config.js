@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: 'blog.hal.codes',
@@ -42,6 +44,60 @@ module.exports = {
           families: ['PlexSans:n4,i4', 'Iosevka:n4', 'BasierSquare:n7'],
           urls: ['fonts/fonts.css'],
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, blog } }) => (
+              blog.blogPosts.nodes.map(node => (
+                Object.assign({}, node.title, {
+                  description: 'A description',
+                  date: new Date(),
+                  url: path.join(site.siteMetadata.siteUrl, node.slug),
+                  guid: path.join(site.siteMetadata.siteUrl, node.slug),
+                  custom_elements: [{ 'content:encoded': node.body.html }],
+                })
+              ))
+            ),
+            query: `
+              {
+                blog {
+                  blogPosts(per: 20) {
+                    pageInfo {
+                      size
+                      total
+                    }
+                    nodes {
+                      title
+                      kicker
+                      body {
+                        html
+                      }
+                      slug
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'blog.hal.codes RSS feed',
+          },
+        ],
       },
     },
   ],
