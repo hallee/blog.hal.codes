@@ -66,7 +66,7 @@ module.exports = {
             serialize: ({ query: { site, blog } }) => (
               blog.blogPosts.nodes.map(node => (
                 Object.assign({}, node.title, {
-                  description: 'A description',
+                  title: node.title,
                   date: new Date(),
                   url: path.join(site.siteMetadata.siteUrl, node.slug),
                   guid: path.join(site.siteMetadata.siteUrl, node.slug),
