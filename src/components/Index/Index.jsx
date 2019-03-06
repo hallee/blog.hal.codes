@@ -49,6 +49,9 @@ export const query = graphql`
           body {
             html
           }
+          preview {
+            html
+          }
           slug
         }
       }

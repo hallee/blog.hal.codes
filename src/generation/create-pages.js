@@ -44,6 +44,9 @@ const createPages = async ({ graphql, actions }) => {
             body {
               html
             }
+            preview {
+              html
+            }
             slug
           }
         }

@@ -7,6 +7,7 @@ import SEO from '../SEO/SEO';
 const PostBody = ({ node, titleLink, preview }) => {
   const title = titleLink ? <Link to={ titleLink }>{ node.title }</Link> : node.title;
   const html = { __html: node.body.html };
+  const previewHTML = { __html: node.preview.html };
   return (
     <article>
       <SEO keywords={ ['gatsby', 'application', 'react'] } />
@@ -15,7 +16,11 @@ const PostBody = ({ node, titleLink, preview }) => {
         { title }
       </h2>
       <span className="post-date">January 31, 2019</span>
-      <Fragment dangerouslySetInnerHTML={ html } />
+      { !preview ? (
+        <Fragment dangerouslySetInnerHTML={ html } />
+      ) : (
+        <Fragment dangerouslySetInnerHTML={ previewHTML } />
+      )}
     </article>
   );
 };
