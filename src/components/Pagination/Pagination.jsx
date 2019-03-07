@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 import styles from './Pagination.module.scss';
 
 const Pagination = ({
-  currentPage,
   prevPagePath,
   nextPagePath,
   hasPrevPage,
@@ -36,7 +35,6 @@ const Pagination = ({
 );
 
 Pagination.propTypes = {
-  currentPage: PropTypes.number.isRequired,
   prevPagePath: PropTypes.string.isRequired,
   nextPagePath: PropTypes.string.isRequired,
   hasPrevPage: PropTypes.bool.isRequired,

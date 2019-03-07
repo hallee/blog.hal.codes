@@ -11,7 +11,7 @@ const PostList = ({ nodes }) => (
           node={ node }
           titleLink={ node.slug }
           key={ node }
-          preview={ true }
+          preview
         />
       ))
     )}
