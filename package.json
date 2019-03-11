@@ -6,6 +6,7 @@
   "author": "Hal Lee",
   "dependencies": {
     "gatsby": "^2.1.23",
+    "gatsby-plugin-fathom": "^1.0.4",
     "gatsby-plugin-feed": "^2.0.14",
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.0.8",

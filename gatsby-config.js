@@ -45,6 +45,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        trackingUrl: 'stats.hal.codes',
+        siteId: 'WWOQF',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
