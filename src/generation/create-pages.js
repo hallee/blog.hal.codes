@@ -48,6 +48,9 @@ const createPages = async ({ graphql, actions }) => {
               html
             }
             slug
+            meta {
+              published
+            }
           }
         }
       }

@@ -53,6 +53,9 @@ export const query = graphql`
             html
           }
           slug
+          meta {
+            published
+          }
         }
       }
     }
