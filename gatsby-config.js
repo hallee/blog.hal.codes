@@ -48,7 +48,7 @@ module.exports = {
       resolve: 'gatsby-plugin-fathom',
       options: {
         trackingUrl: 'stats.hal.codes',
-        siteId: 'FATHOM_SITE_ID',
+        siteId: 'WWOQF',
       },
     },
     {
