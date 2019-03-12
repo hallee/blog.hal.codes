@@ -40,7 +40,7 @@ module.exports = {
       options: {
         custom: {
           families: ['PlexSans:n4,i4', 'Iosevka:n4', 'BasierSquare:n7'],
-          urls: ['fonts/fonts.css'],
+          urls: ['/fonts/fonts.css'],
         },
       },
     },
