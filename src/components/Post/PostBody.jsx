@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Fragment from 'react-dom-fragment';
 
 const PostBody = ({ node, titleLink, preview }) => {
-  const title = titleLink ? <Link to={ titleLink }>{ node.title }</Link> : node.title;
+  const title = titleLink ? <Link to={ `/${titleLink}` }>{ node.title }</Link> : node.title;
 
   const published = new Date(node.meta.published);
   const dateString = published.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric' });
