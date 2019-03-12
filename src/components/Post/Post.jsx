@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../Layout/Layout';
 import PostBody from './PostBody';
+import SEO from '../SEO/SEO';
 
 const Post = ({ pageContext }) => {
   const { node } = pageContext;
   return (
     <Layout>
+      <SEO title={ node.title } />
       <section>
         <PostBody node={ node } />
       </section>

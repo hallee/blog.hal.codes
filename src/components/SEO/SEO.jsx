@@ -29,7 +29,8 @@ function SEO({
               lang,
             } }
             title={ title }
-            titleTemplate={ `%s | ${data.site.siteMetadata.title}` }
+            titleTemplate={ `%s · ${data.site.siteMetadata.title}` }
+            defaultTitle={ `${data.site.siteMetadata.title}: ${data.site.siteMetadata.description}` }
             meta={ [
               {
                 name: 'description',
