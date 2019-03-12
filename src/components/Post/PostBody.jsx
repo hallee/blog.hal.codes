@@ -6,9 +6,10 @@ import SEO from '../SEO/SEO';
 
 const PostBody = ({ node, titleLink, preview }) => {
   const title = titleLink ? <Link to={ titleLink }>{ node.title }</Link> : node.title;
-  console.log(node.meta.published);
+
   const published = new Date(node.meta.published);
-  const dateString = published.toTimeString();
+  const dateString = published.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric' });
+
   const html = { __html: node.body.html };
   const previewHTML = { __html: node.preview.html };
   return (
@@ -18,7 +19,7 @@ const PostBody = ({ node, titleLink, preview }) => {
       <h2>
         { title }
       </h2>
-      <span className="post-date">{ published }</span>
+      <span className="post-date">{ dateString }</span>
       { !preview ? (
         <Fragment dangerouslySetInnerHTML={ html } />
       ) : (
