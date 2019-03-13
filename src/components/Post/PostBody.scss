@@ -42,6 +42,14 @@ div, article {
     @include bust-out;
   }
 
+  code {
+    font-size: 2rem;
+    font-family: $mono-font-stack;
+    background: #ddd;
+    border-radius: $border-radius;
+    padding: 0 0.2em;
+  }
+
   pre {
     @include bust-out;
     display: flex;
@@ -54,7 +62,7 @@ div, article {
       min-width: calc(#{$small-width} - (#{$padding} + 3.6rem) * 2);
       background: #2a2734;
       color: #f1ebff;
-      font-family: 'Iosevka', Monaco, monospace;
+      font-family: $mono-font-stack;
       font-size: 1.8rem;
       border-radius: $border-radius;
       padding: 2.4rem 3.2rem;
