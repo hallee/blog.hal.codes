@@ -34,7 +34,15 @@ module.exports = {
     },
     // 'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        data: '@import "resources.scss";',
+        includePaths: [
+          'src',
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

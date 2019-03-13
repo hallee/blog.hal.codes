@@ -1,0 +1,57 @@
+$font-stack: "PlexSans",
+             -apple-system,
+             BlinkMacSystemFont,
+             "Segoe UI",
+             Roboto,
+             Helvetica,
+             Arial,
+             sans-serif,
+             "Apple Color Emoji",
+             "Segoe UI Emoji",
+             "Segoe UI Symbol";
+
+$heading-font-stack: "BasierSquare", "SF Compact Display", $font-stack;
+
+$mono-font-stack: "Iosevka", Monaco, monospace;
+
+$break-small: "only screen and (max-width: 768px)";
+
+$large-width: 1200px;
+$small-width: 700px;
+
+$padding: 2.4rem;
+
+$background-color: #EFEFEF;
+$foreground-color: #222;
+$selection-color: #FFFACE;
+$accent-color: #5664EC;
+
+$border-radius: 6px;
+
+@mixin shadow {
+  // box-shadow: 0 1rem 3rem -1rem #2a273466,
+  //             0 1.2rem 2rem -0.6rem #2a273444;
+}
+
+@mixin bust-out($width: $large-width) {
+  left: 50%;
+  margin-left: calc(-#{$width} / 2);
+  margin-right: calc(-#{$width} / 2);
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: $width;
+
+  @media only screen and (max-width: $width) {
+    margin-left: calc(-100vw / 2 + #{$padding});
+    margin-right: calc(-100vw / 2 + #{$padding});
+    width: calc(100vw - #{$padding} * 2);
+  }
+
+  @media #{$break-small} {
+    margin-left: calc(-100vw / 2);
+    margin-right: calc(-100vw / 2);
+    width: 100vw;
+    border-radius: 0;
+  }
+}
