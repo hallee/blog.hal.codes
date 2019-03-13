@@ -74,7 +74,9 @@ function SEO({
                   : [],
               )
               .concat(meta) }
-          />
+          >
+            <link rel="icon" sizes="152x152" href="/favicon.png" />
+          </Helmet>
         );
       } }
     />
