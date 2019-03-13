@@ -42,6 +42,15 @@ div, article {
     @include bust-out;
   }
 
+  p a {
+    color: $accent-color;
+    border-radius: $border-radius;
+    &:hover {
+      background: #baacfd20;
+      text-decoration: none;
+    }
+  }
+
   code {
     font-size: 2rem;
     font-family: $mono-font-stack;
@@ -78,7 +87,7 @@ div, article {
   }
 
   span.kicker {
-    color: #5964E4;
+    color: $accent-color;
     margin-left: 0.4rem;
   }
 
