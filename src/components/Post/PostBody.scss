@@ -57,8 +57,9 @@ div, article {
       font-family: 'Iosevka', Monaco, monospace;
       font-size: 1.8rem;
       border-radius: $border-radius;
-      padding: 2.4rem 3.6rem;
+      padding: 2.4rem 3.2rem;
       overflow: scroll;
+      position: relative;
 
       @media #{$break-small} {
         min-width: auto;
@@ -66,6 +67,32 @@ div, article {
         padding: $padding;
         border-radius: 0;
       }
+    }
+
+    @mixin lang-marker {
+      font-family: $font-stack;
+      font-size: 1.4rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      user-select: none;
+      position: absolute;
+      right: 3.2rem;
+      bottom: 2.4rem;
+      color: #f1ebff;
+      opacity: 0.7;
+      @media #{$break-small} {
+        display: none;
+      }
+    }
+
+    .language-swift::after {
+      content: "Swift";
+      @include lang-marker;
+    }
+
+    .language-js::after {
+      content: "Javascript";
+      @include lang-marker;
     }
   }
 

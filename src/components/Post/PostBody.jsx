@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Fragment from 'react-dom-fragment';
 import './PostBody.scss';
+import './code.css';
 
 const PostBody = ({ node, titleLink, preview }) => {
   const title = titleLink ? <Link to={ `/${titleLink}` }>{ node.title }</Link> : node.title;
