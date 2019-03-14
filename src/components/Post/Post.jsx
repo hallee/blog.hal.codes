@@ -6,7 +6,7 @@ import PostBody from './PostBody';
 import SEO from '../SEO/SEO';
 
 const Post = ({ pageContext }) => {
-  const { node } = pageContext;
+  const { node, next } = pageContext;
   return (
     <Layout>
       <SEO title={ node.title } />
@@ -14,7 +14,7 @@ const Post = ({ pageContext }) => {
         <PostBody node={ node } />
       </section>
       <Footer
-        readNext={ [node] }
+        readNext={ next ? [next] : null }
       />
     </Layout>
   );

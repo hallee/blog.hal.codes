@@ -5,9 +5,9 @@ import PostBody from '../Post/PostBody';
 import './ReadNext.scss';
 
 const ReadNext = ({ nodes }) => (
-  <section className="read-next">
+  <>
     { nodes && (
-      <>
+      <section className="read-next">
         <h3>~</h3>
         { nodes.map(node => (
           <PostBody
@@ -17,9 +17,9 @@ const ReadNext = ({ nodes }) => (
             preview
           />
         ))}
-      </>
+      </section>
     )}
-  </section>
+  </>
 );
 
 ReadNext.defaultProps = {

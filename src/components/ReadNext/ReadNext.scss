@@ -1,8 +1,13 @@
 section.read-next {
   max-width: $small-width;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 4rem 2rem 0;
   background: #ddd;
+  border-radius: $border-radius;
+
+  @media #{$break-small} {
+    border-radius: 0;
+  }
 
   > article {
     margin-top: 1rem;
