@@ -103,6 +103,7 @@ SEO.defaultProps = {
   keywords: [],
   type: 'website',
   slug: null,
+  date: null,
 };
 
 SEO.propTypes = {
@@ -113,6 +114,7 @@ SEO.propTypes = {
   title: PropTypes.string,
   type: PropTypes.string,
   slug: PropTypes.string,
+  date: PropTypes.string,
 };
 
 export default SEO;
