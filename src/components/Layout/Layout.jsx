@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import 'normalize.css';
 import './Layout.scss';
-import Header from '../Header/Header';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, readNext }) => (
   <StaticQuery
     query={ graphql`
       query SiteTitleQuery {
@@ -21,6 +21,7 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={ data.site.siteMetadata.title } />
         <main>{children}</main>
+        <Footer readNext={ readNext } />
       </>
     ) }
   />
@@ -28,6 +29,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  readNext: PropTypes.node.isRequired,
 };
 
 export default Layout;

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Footer from '../Footer/Footer';
 import PostBody from '../Post/PostBody';
 
 const PostList = ({ nodes }) => (
@@ -15,7 +14,6 @@ const PostList = ({ nodes }) => (
         />
       ))
     )}
-    <Footer />
   </section>
 );
 
