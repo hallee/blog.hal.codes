@@ -9,7 +9,7 @@ const PostList = ({ nodes }) => (
         <PostBody
           node={ node }
           titleLink={ node.slug }
-          key={ node }
+          key={ node.slug }
           preview
         />
       ))

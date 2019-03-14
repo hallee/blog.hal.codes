@@ -27,9 +27,13 @@ const Layout = ({ children, readNext }) => (
   />
 );
 
+Layout.defaultProps = {
+  readNext: null,
+};
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  readNext: PropTypes.node.isRequired,
+  readNext: PropTypes.arrayOf(PropTypes.object.isRequred),
 };
 
 export default Layout;

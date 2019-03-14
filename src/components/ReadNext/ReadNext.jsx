@@ -13,7 +13,7 @@ const ReadNext = ({ nodes }) => (
           <PostBody
             node={ node }
             titleLink={ node.slug }
-            key={ node }
+            key={ `read-next-${node.slug}` }
             preview
           />
         ))}
@@ -27,7 +27,7 @@ ReadNext.defaultProps = {
 };
 
 ReadNext.propTypes = {
-  nodes: PropTypes.arrayOf(PropTypes.object.isRequired),
+  nodes: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default ReadNext;

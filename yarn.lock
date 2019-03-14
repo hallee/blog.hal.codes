@@ -4931,6 +4931,11 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
+he@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
+  integrity sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
+
 hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
@@ -6659,6 +6664,13 @@ node-gyp@^3.8.0:
     semver "~5.3.0"
     tar "^2.0.0"
     which "1"
+
+node-html-parser@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/node-html-parser/-/node-html-parser-1.1.12.tgz#dc345411496a7bb4313ad41ae044df5d4cd7220b"
+  integrity sha512-tS8QkN91I4LXPnCOXsMuD+q9/3k5K3ltzASKzrj1g6fkNeE0bHE3DYCtt/F9oC+z1Rrl16N9AHleMEY8R0v8jw==
+  dependencies:
+    he "1.1.1"
 
 node-int64@^0.4.0:
   version "0.4.0"
