@@ -26,6 +26,38 @@ a {
   }
 }
 
+a.continue {
+  text-decoration: none;
+
+  span {
+    background: #baacfd20;
+    color: $accent-color;
+    border-radius: $border-radius;
+    padding: 1rem 2rem;
+  }
+
+  &:hover {
+    span {
+      background: #baacfd40;
+    }
+  }
+}
+
+p a {
+  color: $accent-color;
+  border-radius: $border-radius;
+  &:hover {
+    background: #baacfd20;
+    text-decoration: none;
+  }
+}
+
+a.continue {
+  margin: 1.65rem 0 1.65rem 0;
+  color: $accent-color;
+  font-size: 0.8em;
+}
+
 p {
   margin: 1.65rem 0 1.65rem 0;
 }
@@ -40,15 +72,6 @@ div, article {
   img {
     border-radius: $border-radius;
     @include bust-out;
-  }
-
-  p a {
-    color: $accent-color;
-    border-radius: $border-radius;
-    &:hover {
-      background: #baacfd20;
-      text-decoration: none;
-    }
   }
 
   code {

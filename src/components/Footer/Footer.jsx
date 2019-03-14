@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import ReadNext from '../ReadNext/ReadNext';
 import './Footer.scss';
 
-const Footer = () => (
+const Footer = ({ readNext }) => (
   <footer>
+    <ReadNext nodes={ readNext } />
     <ul>
       <li>
         <span
@@ -18,5 +21,13 @@ const Footer = () => (
     </ul>
   </footer>
 );
+
+Footer.defaultProps = {
+  readNext: null,
+};
+
+Footer.propTypes = {
+  readNext: PropTypes.arrayOf(PropTypes.object.isRequired),
+};
 
 export default Footer;

@@ -7,6 +7,7 @@ import './code.css';
 
 const PostBody = ({ node, titleLink, preview }) => {
   const title = titleLink ? <Link to={ `/${titleLink}` }>{ node.title }</Link> : node.title;
+  const continueReading = preview ? <Link className="continue" to={ `/${node.slug}` }><span>Continue reading →</span></Link> : null;
 
   const published = new Date(node.meta.published);
   const dateString = published.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -25,6 +26,7 @@ const PostBody = ({ node, titleLink, preview }) => {
       ) : (
         <Fragment dangerouslySetInnerHTML={ previewHTML } />
       )}
+      { continueReading }
     </article>
   );
 };

@@ -10,19 +10,25 @@ const detailsQuery = graphql`
         title
         description
         author
+        siteUrl
       }
     }
   }
 `;
 
 function SEO({
-  description, lang, meta, keywords, title,
+  description, lang, meta, keywords, title, slug, type, date,
 }) {
   return (
     <StaticQuery
       query={ detailsQuery }
       render={ (data) => {
         const metaDescription = description || data.site.siteMetadata.description;
+        const canonical = slug ? `${data.site.siteMetadata.siteUrl}/${slug}` : data.site.siteMetadata.siteUrl;
+        const dateMeta = date ? {
+          property: 'article:published_time',
+          content: date,
+        } : {};
         return (
           <Helmet
             htmlAttributes={ {
@@ -38,7 +44,7 @@ function SEO({
               },
               {
                 property: 'og:title',
-                content: title,
+                content: title || data.site.siteMetadata.title,
               },
               {
                 property: 'og:description',
@@ -46,7 +52,7 @@ function SEO({
               },
               {
                 property: 'og:type',
-                content: 'website',
+                content: type,
               },
               {
                 name: 'twitter:card',
@@ -58,11 +64,15 @@ function SEO({
               },
               {
                 name: 'twitter:title',
-                content: title,
+                content: title || data.site.siteMetadata.title,
               },
               {
                 name: 'twitter:description',
                 content: metaDescription,
+              },
+              {
+                name: 'twitter:url',
+                content: canonical,
               },
             ]
               .concat(
@@ -73,9 +83,11 @@ function SEO({
                   }
                   : [],
               )
-              .concat(meta) }
+              .concat(meta)
+              .concat(dateMeta) }
           >
             <link rel="icon" sizes="152x152" href="/favicon.png" />
+            <link rel="canonical" href={ canonical } />
           </Helmet>
         );
       } }
@@ -89,6 +101,9 @@ SEO.defaultProps = {
   description: '',
   meta: [],
   keywords: [],
+  type: 'website',
+  slug: null,
+  date: null,
 };
 
 SEO.propTypes = {
@@ -97,6 +112,9 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
+  type: PropTypes.string,
+  slug: PropTypes.string,
+  date: PropTypes.string,
 };
 
 export default SEO;

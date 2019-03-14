@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import PostBody from '../Post/PostBody';
 
 const PostList = ({ nodes }) => (
@@ -10,7 +9,7 @@ const PostList = ({ nodes }) => (
         <PostBody
           node={ node }
           titleLink={ node.slug }
-          key={ node }
+          key={ node.slug }
           preview
         />
       ))

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Layout from '../Layout/Layout';
 import SEO from '../SEO/SEO';
+import Layout from '../Layout/Layout';
 import PostList from '../PostList/PostList';
 import Pagination from '../Pagination/Pagination';
 
@@ -21,7 +20,7 @@ const IndexTemplate = ({ pageContext }) => {
 
   return (
     <Layout>
-      <SEO keywords={ ['gatsby', 'application', 'react'] } />
+      <SEO />
       <PostList nodes={ nodes } />
       <Pagination
         currentPage={ currentPage }
