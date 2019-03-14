@@ -86,7 +86,7 @@ const createPages = async ({ graphql, actions }) => {
   const { nodes } = postSlugs.data.blog.blogPosts;
 
   nodes.forEach((node, i) => {
-    const next = nodes[i + 1];
+    const next = nodes[i + 1] ? nodes[i + 1] : nodes[0];
     createPage({
       path: node.slug,
       component: path.resolve('./src/components/Post/Post.jsx'),

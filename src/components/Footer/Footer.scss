@@ -1,6 +1,10 @@
 footer {
-  padding: 4rem 0;
-  @include bust-out(100vw, 0);
+  padding: 3.4rem 0;
+  @include bust-out;
+
+  @media #{$break-small} {
+    background: $read-next-background;
+  }
 
   ul {
     text-align: center;
