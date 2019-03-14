@@ -44,7 +44,7 @@ function SEO({
               },
               {
                 property: 'og:title',
-                content: title,
+                content: title || data.site.siteMetadata.title,
               },
               {
                 property: 'og:description',
@@ -64,7 +64,7 @@ function SEO({
               },
               {
                 name: 'twitter:title',
-                content: title,
+                content: title || data.site.siteMetadata.title,
               },
               {
                 name: 'twitter:description',
