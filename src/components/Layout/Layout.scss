@@ -6,6 +6,7 @@ html {
   @media #{$break-small} {
     font-size: 50%;
   }
+  overflow-x: hidden;
 }
 
 body {

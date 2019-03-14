@@ -1,0 +1,18 @@
+section.read-next {
+  max-width: $small-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+  background: #ddd;
+
+  > article {
+    margin-top: 1rem;
+  }
+
+  > h3 {
+    color: $accent-color;
+    display: block;
+    user-select: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+}

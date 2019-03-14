@@ -33,7 +33,7 @@ $border-radius: 6px;
   //             0 1.2rem 2rem -0.6rem #2a273444;
 }
 
-@mixin bust-out($width: $large-width) {
+@mixin bust-out($width: $large-width, $padding: $padding) {
   left: 50%;
   margin-left: calc(-#{$width} / 2);
   margin-right: calc(-#{$width} / 2);

@@ -1,16 +1,15 @@
 footer {
-  font-size: 1.6rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 4em 0 1em 0;
-  text-align: center;
-
-  @media #{$break-small} {
-    font-size: 1.8rem;
-  }
+  background: #ddd;
+  padding: 4rem 0;
+  @include bust-out(100vw, 0);
 
   ul {
+    text-align: center;
+    font-size: 1.6rem;
+    @media #{$break-small} {
+      font-size: 1.8rem;
+    }
+    display: block;
     margin: 0 auto;
     padding: 0;
     list-style: none;
