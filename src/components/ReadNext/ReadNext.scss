@@ -5,7 +5,7 @@ section.read-next {
   background: $read-next-background;
   border-radius: $border-radius;
 
-  @media #{$break-small} {
+  @include mobile {
     border-radius: 0;
   }
 

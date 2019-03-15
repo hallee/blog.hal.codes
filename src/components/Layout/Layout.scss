@@ -3,7 +3,7 @@ html {
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
 
-  @media #{$break-small} {
+  @include mobile {
     font-size: 50%;
   }
   overflow-x: hidden;
@@ -17,6 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 header {
@@ -24,11 +25,12 @@ header {
   margin: 0 auto 4.8rem auto;
   max-width: $small-width;
 
-  @media #{$break-small} {
+  @include mobile {
     margin: 0;
     svg {
       width: 145px;
       height: 40px;
     }
   }
+  overflow-x: hidden;
 }
