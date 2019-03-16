@@ -14,8 +14,6 @@ $heading-font-stack: "BasierSquare", "SF Compact Display", $font-stack;
 
 $mono-font-stack: "Iosevka", Monaco, monospace;
 
-$break-small: "only screen and (max-width: 768px)";
-
 $large-width: 1200px;
 $small-width: 700px;
 
@@ -28,6 +26,34 @@ $accent-color: #5664EC;
 $read-next-background: #e3e3e3;
 
 $border-radius: 6px;
+
+$break-tablet: 1200px;
+$break-mobile: 600px;
+$break-mobile-small: 320px;
+
+@mixin desktop {
+  @media screen and (min-width: $break-tablet) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $break-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $break-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media screen and (max-width: $break-mobile-small) {
+    @content;
+  }
+}
 
 @mixin shadow {
   // box-shadow: 0 1rem 3rem -1rem #2a273466,
@@ -49,7 +75,7 @@ $border-radius: 6px;
     width: calc(100vw - #{$padding} * 2);
   }
 
-  @media #{$break-small} {
+  @include mobile {
     margin-left: calc(-100vw / 2);
     margin-right: calc(-100vw / 2);
     width: 100vw;
