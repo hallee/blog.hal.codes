@@ -58,13 +58,13 @@ ul li {
 }
 
 a.continue {
-  margin: 1.65rem 0 1.65rem 0;
+  margin: 1.65rem 0;
   color: $accent-color;
   font-size: 0.8em;
 }
 
 p {
-  margin: 1.65rem 0 1.65rem 0;
+  margin: 1.65rem 0;
 }
 
 ::selection {
@@ -85,6 +85,11 @@ section.read-next {
   img, video, pre {
     max-width: 100%;
   }
+}
+
+article > video {
+  margin: 1.65rem auto;
+  object-fit: cover;
 }
 
 div, article {

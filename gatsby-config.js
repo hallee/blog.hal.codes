@@ -32,7 +32,7 @@ module.exports = {
         },
       },
     },
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-sass',
@@ -41,15 +41,6 @@ module.exports = {
         includePaths: [
           'src',
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        custom: {
-          families: ['PlexSans:n4,i4', 'Iosevka:n4', 'BasierSquare:n7'],
-          urls: ['/fonts/fonts.css'],
-        },
       },
     },
     {
