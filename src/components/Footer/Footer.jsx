@@ -18,6 +18,19 @@ const Footer = ({ readNext }) => (
       </li>
       <li><a href="https://twitter.com/hal_lee">Twitter</a></li>
       <li><a href="https://github.com/hallee">Github</a></li>
+      <li><a href="https://github.com/hallee/blog.hal.codes">Source code</a></li>
+    </ul>
+    <ul>
+      <li>
+        <span
+          className="emoji"
+          role="img"
+          aria-label="feeds"
+        >
+          📡
+        </span>
+      </li>
+      <li><a href="/rss.xml">RSS</a></li>
     </ul>
   </footer>
 );
