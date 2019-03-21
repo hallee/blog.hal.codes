@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -60,7 +61,7 @@ const createPages = async ({ graphql, actions }) => {
     });
   }
 
-  const postSlugs = await graphql(`
+  const blog = await graphql(`
     {
       blog {
         blogPosts {
@@ -69,6 +70,7 @@ const createPages = async ({ graphql, actions }) => {
             kicker
             body {
               html
+              markdown
             }
             preview {
               html
@@ -83,7 +85,7 @@ const createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const { nodes } = postSlugs.data.blog.blogPosts;
+  const { nodes } = blog.data.blog.blogPosts;
 
   nodes.forEach((node, i) => {
     const next = nodes[i + 1] ? nodes[i + 1] : nodes[0];
@@ -95,6 +97,11 @@ const createPages = async ({ graphql, actions }) => {
         next,
       },
     });
+  });
+
+  nodes.forEach((node) => {
+    const { markdown } = node.body;
+    fs.writeFile(path.resolve(`./static/${node.slug}.md`), markdown, () => {});
   });
 };
 
