@@ -17,7 +17,7 @@ const PostBody = ({ node, titleLink, preview }) => {
   return (
     <article>
       <span className="kicker">{ node.kicker }</span>
-      <h2>
+      <h2 className="title">
         { title }
       </h2>
       <span className="post-date">{ dateString }</span>

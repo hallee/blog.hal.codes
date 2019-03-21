@@ -10,9 +10,10 @@ section article {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-stack;
+  margin: 1em 0 0;
 }
 
-h2 {
+h2.title {
   font-size: 4.4rem;
   line-height: 1.1;
   margin: 0.2rem 0;
@@ -51,10 +52,6 @@ p a {
     background: #baacfd20;
     text-decoration: none;
   }
-}
-
-ul li {
-  line-height: 0.75;
 }
 
 a.continue {
