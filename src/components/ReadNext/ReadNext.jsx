@@ -8,7 +8,7 @@ const ReadNext = ({ nodes }) => (
   <>
     { nodes && (
       <section className="read-next">
-        <h3>~</h3>
+        <h3>→</h3>
         { nodes.map(node => (
           <PostBody
             node={ node }

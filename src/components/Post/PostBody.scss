@@ -13,6 +13,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1em 0 0;
 }
 
+h1 { font-size: 6rem; }
+h2 { font-size: 3.8rem; }
+h3 { font-size: 3.2rem; }
+h4 { font-size: 2.6rem; }
+h5 { font-size: 2.2rem; }
+h6 { font-size: 2rem; }
+
 h2.title {
   font-size: 4.4rem;
   line-height: 1.1;
@@ -22,20 +29,29 @@ h2.title {
 a {
   color: $foreground-color;
   text-decoration: none;
+  @include link-transition;
+
 
   &:hover {
     text-decoration: underline;
   }
+
 }
 
 a.continue {
   text-decoration: none;
+  margin: 1.65rem 0;
+  color: $accent-color;
+  font-size: 0.8em;
 
   span {
+    display: inline-block;
     background: #baacfd20;
     color: $accent-color;
     border-radius: $border-radius;
     padding: 1rem 2rem;
+    @include link-transition;
+    @include pop-animation;
   }
 
   &:hover {
@@ -48,16 +64,13 @@ a.continue {
 p a {
   color: $accent-color;
   border-radius: $border-radius;
+  padding: 0 0.4rem;
+  margin: 0 -0.4rem;
+
   &:hover {
-    background: #baacfd20;
+    background: #baacfd30;
     text-decoration: none;
   }
-}
-
-a.continue {
-  margin: 1.65rem 0;
-  color: $accent-color;
-  font-size: 0.8em;
 }
 
 p {
@@ -102,7 +115,16 @@ div, article {
     font-family: $mono-font-stack;
     background: #ddd;
     border-radius: $border-radius;
-    padding: 0 0.2em;
+    padding: 0 0.4rem;
+    margin: 0 -0.2rem;
+  }
+
+  a code {
+    line-height: 3.3rem;
+    @include link-transition;
+    &:hover {
+      background: none;
+    }
   }
 
   pre {
