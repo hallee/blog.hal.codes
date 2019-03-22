@@ -22,6 +22,8 @@ h2.title {
 a {
   color: $foreground-color;
   text-decoration: none;
+  @include link-transition;
+
 
   &:hover {
     text-decoration: underline;
@@ -31,6 +33,9 @@ a {
 
 a.continue {
   text-decoration: none;
+  margin: 1.65rem 0;
+  color: $accent-color;
+  font-size: 0.8em;
 
   span {
     display: inline-block;
@@ -39,12 +44,12 @@ a.continue {
     border-radius: $border-radius;
     padding: 1rem 2rem;
     @include link-transition;
+    @include pop-animation;
   }
 
   &:hover {
     span {
       background: #baacfd40;
-      transform: scale(1.04);
     }
   }
 }
@@ -54,16 +59,11 @@ p a {
   border-radius: $border-radius;
   padding: 0 0.4rem;
   margin: 0 -0.4rem;
+
   &:hover {
     background: #baacfd30;
     text-decoration: none;
   }
-}
-
-a.continue {
-  margin: 1.65rem 0;
-  color: $accent-color;
-  font-size: 0.8em;
 }
 
 p {

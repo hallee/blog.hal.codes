@@ -1,7 +1,4 @@
-h1 a {
+h1 svg {
   @include link-transition;
-
-  &:hover {
-    transform: scale(1.04);
-  }
+  @include pop-animation;
 }
