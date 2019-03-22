@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Fragment from 'react-dom-fragment';
+import parse from 'html-react-parser';
 import './PostBody.scss';
 import './code.css';
 
@@ -12,8 +13,6 @@ const PostBody = ({ node, titleLink, preview }) => {
   const published = new Date(node.meta.published);
   const dateString = published.toLocaleString('en-us', { month: 'long', day: 'numeric', year: 'numeric' });
 
-  const html = { __html: node.body.html };
-  const previewHTML = { __html: node.preview.html };
   return (
     <article>
       <span className="kicker">{ node.kicker }</span>
@@ -22,9 +21,9 @@ const PostBody = ({ node, titleLink, preview }) => {
       </h2>
       <span className="post-date">{ dateString }</span>
       { !preview ? (
-        <Fragment dangerouslySetInnerHTML={ html } />
+        <Fragment>{ parse(node.body.html) }</Fragment>
       ) : (
-        <Fragment dangerouslySetInnerHTML={ previewHTML } />
+        <Fragment>{ parse(node.preview.html) }</Fragment>
       )}
       { continueReading }
     </article>
