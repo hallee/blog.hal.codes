@@ -26,21 +26,25 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
 }
 
 a.continue {
   text-decoration: none;
 
   span {
+    display: inline-block;
     background: #baacfd20;
     color: $accent-color;
     border-radius: $border-radius;
     padding: 1rem 2rem;
+    @include link-transition;
   }
 
   &:hover {
     span {
       background: #baacfd40;
+      transform: scale(1.04);
     }
   }
 }
@@ -48,8 +52,10 @@ a.continue {
 p a {
   color: $accent-color;
   border-radius: $border-radius;
+  padding: 0 0.4rem;
+  margin: 0 -0.4rem;
   &:hover {
-    background: #baacfd20;
+    background: #baacfd30;
     text-decoration: none;
   }
 }
@@ -102,7 +108,12 @@ div, article {
     font-family: $mono-font-stack;
     background: #ddd;
     border-radius: $border-radius;
-    padding: 0 0.2em;
+    padding: 0 0.4rem;
+    margin: 0 -0.2rem;
+  }
+
+  a code {
+    background: #baacfd30;
   }
 
   pre {

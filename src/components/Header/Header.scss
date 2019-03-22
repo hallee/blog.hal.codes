@@ -1,0 +1,7 @@
+h1 a {
+  @include link-transition;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+}

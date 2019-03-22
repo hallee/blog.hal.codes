@@ -55,6 +55,12 @@ $break-mobile-small: 320px;
   }
 }
 
+@mixin link-transition {
+  transition: color .2s cubic-bezier(0.1, 0.5, 0.8, 1.1),
+              background-color .2s cubic-bezier(0.1, 0.5, 0.8, 1.1),
+              transform 0.3s cubic-bezier(0.175, 0.9, 0.32, 1.6);
+}
+
 @mixin shadow {
   // box-shadow: 0 1rem 3rem -1rem #2a273466,
   //             0 1.2rem 2rem -0.6rem #2a273444;
