@@ -32,7 +32,7 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-offline',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-sass',
