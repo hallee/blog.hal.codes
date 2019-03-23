@@ -6,6 +6,7 @@ module.exports = {
     description: 'A blog, mostly about software development, usually iOS and Swift related',
     author: 'Hal Lee',
     siteUrl: 'https://blog.hal.codes',
+    imageUrl: 'https://blog.hal.codes/favicon.png',
   },
   plugins: [
     {
@@ -60,7 +61,9 @@ module.exports = {
                 title
                 description
                 siteUrl
+                imageUrl
                 site_url: siteUrl
+                image_url: imageUrl
               }
             }
           }
@@ -71,10 +74,9 @@ module.exports = {
               blog.blogPosts.nodes.map(node => (
                 Object.assign({}, node.title, {
                   title: node.title,
-                  date: new Date(),
+                  date: node.meta.published,
                   url: path.join(site.siteMetadata.siteUrl, node.slug),
                   guid: path.join(site.siteMetadata.siteUrl, node.slug),
-                  image_url: '/favicon.png',
                   custom_elements: [{ 'content:encoded': node.body.html }],
                 })
               ))
@@ -83,10 +85,6 @@ module.exports = {
               {
                 blog {
                   blogPosts(per: 20) {
-                    pageInfo {
-                      size
-                      total
-                    }
                     nodes {
                       title
                       kicker
@@ -94,6 +92,9 @@ module.exports = {
                         html
                       }
                       slug
+                      meta {
+                        published
+                      }
                     }
                   }
                 }
