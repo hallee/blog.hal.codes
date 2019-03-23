@@ -74,6 +74,7 @@ module.exports = {
                   date: new Date(),
                   url: path.join(site.siteMetadata.siteUrl, node.slug),
                   guid: path.join(site.siteMetadata.siteUrl, node.slug),
+                  image_url: '/favicon.png',
                   custom_elements: [{ 'content:encoded': node.body.html }],
                 })
               ))
