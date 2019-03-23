@@ -92,8 +92,9 @@ main {
 }
 
 section.read-next {
-  img, video, pre {
+  img, video, pre, code {
     max-width: 100%;
+    border-radius: $border-radius;
   }
 }
 
