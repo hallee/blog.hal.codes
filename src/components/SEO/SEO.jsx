@@ -86,7 +86,7 @@ function SEO({
               .concat(meta)
               .concat(dateMeta) }
           >
-            <link rel="icon" sizes="152x152" href="/favicon.png" />
+            <link rel="shortcut icon" type="image/png" sizes="152x152" href="/favicon.png" />
             <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
             <link rel="mask-icon" href="/favicon.svg" color="#5664EC" />
             <link rel="canonical" href={ canonical } />
