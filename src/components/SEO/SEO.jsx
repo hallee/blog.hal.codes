@@ -17,7 +17,7 @@ const detailsQuery = graphql`
 `;
 
 function SEO({
-  description, lang, meta, keywords, title, slug, type, date, image
+  description, lang, meta, keywords, title, slug, type, date, image,
 }) {
   return (
     <StaticQuery
@@ -29,6 +29,7 @@ function SEO({
           property: 'article:published_time',
           content: date,
         } : {};
+        const image = image || `${data.site.siteMetadata.siteUrl}/favicon.png`;
         const schemaOrg = [
           {
             '@context': 'http://schema.org',
@@ -63,7 +64,7 @@ function SEO({
               dateModified: date,
               image: {
                 '@type': 'ImageObject',
-                url: image || `${data.site.siteMetadata.siteUrl}/favicon.png`,
+                url: image,
               },
               mainEntityOfPage: canonical,
               description: metaDescription,
@@ -94,6 +95,14 @@ function SEO({
               {
                 property: 'og:type',
                 content: type,
+              },
+              {
+                property: 'og:image',
+                content: image,
+              },
+              {
+                property: 'twitter:image',
+                content: image,
               },
               {
                 name: 'twitter:card',
