@@ -17,7 +17,7 @@ const detailsQuery = graphql`
 `;
 
 function SEO({
-  description, lang, meta, keywords, title, slug, type, date,
+  description, lang, meta, keywords, title, slug, type, date, image,
 }) {
   return (
     <StaticQuery
@@ -29,6 +29,48 @@ function SEO({
           property: 'article:published_time',
           content: date,
         } : {};
+        const featuredImage = image || `${data.site.siteMetadata.siteUrl}/favicon.png`;
+        const schemaOrg = [
+          {
+            '@context': 'http://schema.org',
+            '@type': 'Blog',
+            url: data.site.siteMetadata.siteUrl,
+            name: data.site.siteMetadata.title,
+          },
+        ];
+        if (slug) {
+          schemaOrg.push(
+            {
+              '@context': 'http://schema.org',
+              '@type': 'BlogPosting',
+              url: canonical,
+              name: title,
+              headline: title || data.site.siteMetadata.title,
+              author: {
+                '@type': 'Person',
+                name: data.site.siteMetadata.author,
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'hal.codes',
+                logo: {
+                  '@type': 'ImageObject',
+                  width: 152,
+                  height: 152,
+                  url: `${data.site.siteMetadata.siteUrl}/favicon.png`,
+                },
+              },
+              datePublished: date,
+              dateModified: date,
+              image: {
+                '@type': 'ImageObject',
+                url: featuredImage,
+              },
+              mainEntityOfPage: canonical,
+              description: metaDescription,
+            },
+          );
+        }
         return (
           <Helmet
             htmlAttributes={ {
@@ -53,6 +95,14 @@ function SEO({
               {
                 property: 'og:type',
                 content: type,
+              },
+              {
+                property: 'og:image',
+                content: featuredImage,
+              },
+              {
+                property: 'twitter:image',
+                content: featuredImage,
               },
               {
                 name: 'twitter:card',
@@ -86,6 +136,9 @@ function SEO({
               .concat(meta)
               .concat(dateMeta) }
           >
+            <script type="application/ld+json">
+              { JSON.stringify(schemaOrg) }
+            </script>
             <link rel="shortcut icon" type="image/png" sizes="152x152" href="/favicon.png" />
             <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
             <link rel="mask-icon" href="/favicon.svg" color="#5664EC" />
@@ -106,6 +159,7 @@ SEO.defaultProps = {
   type: 'website',
   slug: null,
   date: null,
+  image: null,
 };
 
 SEO.propTypes = {
@@ -117,6 +171,7 @@ SEO.propTypes = {
   type: PropTypes.string,
   slug: PropTypes.string,
   date: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default SEO;

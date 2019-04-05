@@ -31,6 +31,7 @@ const createPages = async ({ graphql, actions }) => {
             nodes {
               title
               kicker
+              featuredImage
               body {
                 html
               }
@@ -68,6 +69,7 @@ const createPages = async ({ graphql, actions }) => {
           nodes {
             title
             kicker
+            featuredImage
             body {
               html
               markdown
