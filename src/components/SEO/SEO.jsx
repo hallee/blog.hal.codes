@@ -17,7 +17,7 @@ const detailsQuery = graphql`
 `;
 
 function SEO({
-  description, lang, meta, keywords, title, slug, type, date,
+  description, lang, meta, keywords, title, slug, type, date, image
 }) {
   return (
     <StaticQuery
@@ -29,7 +29,6 @@ function SEO({
           property: 'article:published_time',
           content: date,
         } : {};
-        const image = null;
         const schemaOrg = [
           {
             '@context': 'http://schema.org',
@@ -151,6 +150,7 @@ SEO.defaultProps = {
   type: 'website',
   slug: null,
   date: null,
+  image: null,
 };
 
 SEO.propTypes = {
@@ -162,6 +162,7 @@ SEO.propTypes = {
   type: PropTypes.string,
   slug: PropTypes.string,
   date: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default SEO;

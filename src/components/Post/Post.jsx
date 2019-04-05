@@ -15,6 +15,7 @@ const Post = ({ pageContext }) => {
         slug={ node.slug }
         type="article"
         date={ node.meta.published }
+        image={ node.featuredImage }
       />
       <section>
         <PostBody node={ node } />
