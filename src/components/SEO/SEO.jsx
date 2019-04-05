@@ -29,7 +29,7 @@ function SEO({
           property: 'article:published_time',
           content: date,
         } : {};
-        const image = image || `${data.site.siteMetadata.siteUrl}/favicon.png`;
+        const featuredImage = image || `${data.site.siteMetadata.siteUrl}/favicon.png`;
         const schemaOrg = [
           {
             '@context': 'http://schema.org',
@@ -64,7 +64,7 @@ function SEO({
               dateModified: date,
               image: {
                 '@type': 'ImageObject',
-                url: image,
+                url: featuredImage,
               },
               mainEntityOfPage: canonical,
               description: metaDescription,
@@ -98,11 +98,11 @@ function SEO({
               },
               {
                 property: 'og:image',
-                content: image,
+                content: featuredImage,
               },
               {
                 property: 'twitter:image',
-                content: image,
+                content: featuredImage,
               },
               {
                 name: 'twitter:card',
