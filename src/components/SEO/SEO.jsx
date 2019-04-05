@@ -29,6 +29,62 @@ function SEO({
           property: 'article:published_time',
           content: date,
         } : {};
+
+        const schemaOrg = [
+          {
+            '@context': 'http://schema.org',
+            '@type': 'Blog',
+            url: data.site.siteMetadata.siteUrl,
+            name: data.site.siteMetadata.title,
+          },
+        ];
+        if (slug) {
+          schemaOrg.push(
+            {
+              '@context': 'http://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  item: {
+                    '@id': canonical,
+                    name: title,
+                    // image,
+                  },
+                },
+              ],
+            },
+            {
+              '@context': 'http://schema.org',
+              '@type': 'BlogPosting',
+              url: canonical,
+              name: title,
+              headline: title || data.site.siteMetadata.title,
+              author: {
+                '@type': 'Person',
+                name: data.site.siteMetadata.author,
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'hal.codes',
+                logo: {
+                  '@type': 'ImageObject',
+                  width: 152,
+                  height: 152,
+                  url: `${data.site.siteMetadata.siteUrl}/favicon.png`,
+                },
+              },
+              datePublished: date,
+              dateModified: date,
+              image: {
+                // '@type': 'ImageObject',
+                // url: image,
+              },
+              description: metaDescription,
+            },
+          );
+        }
         return (
           <Helmet
             htmlAttributes={ {
@@ -86,6 +142,9 @@ function SEO({
               .concat(meta)
               .concat(dateMeta) }
           >
+            <script type="application/ld+json">
+              { JSON.stringify(schemaOrg) }
+            </script>
             <link rel="shortcut icon" type="image/png" sizes="152x152" href="/favicon.png" />
             <link rel="apple-touch-icon-precomposed" href="/favicon.png" />
             <link rel="mask-icon" href="/favicon.svg" color="#5664EC" />
