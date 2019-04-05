@@ -29,7 +29,7 @@ function SEO({
           property: 'article:published_time',
           content: date,
         } : {};
-
+        const image = null;
         const schemaOrg = [
           {
             '@context': 'http://schema.org',
@@ -40,21 +40,6 @@ function SEO({
         ];
         if (slug) {
           schemaOrg.push(
-            {
-              '@context': 'http://schema.org',
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  item: {
-                    '@id': canonical,
-                    name: title,
-                    // image,
-                  },
-                },
-              ],
-            },
             {
               '@context': 'http://schema.org',
               '@type': 'BlogPosting',
@@ -78,9 +63,10 @@ function SEO({
               datePublished: date,
               dateModified: date,
               image: {
-                // '@type': 'ImageObject',
-                // url: image,
+                '@type': 'ImageObject',
+                url: image || `${data.site.siteMetadata.siteUrl}/favicon.png`,
               },
+              mainEntityOfPage: canonical,
               description: metaDescription,
             },
           );
