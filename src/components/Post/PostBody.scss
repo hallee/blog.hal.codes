@@ -144,6 +144,7 @@ div, article {
       border-radius: $border-radius;
       padding: 2.4rem 3.2rem;
       overflow: scroll;
+      word-wrap: normal;
 
       @include mobile {
         min-width: auto;
