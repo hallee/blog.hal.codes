@@ -2,3 +2,7 @@ h1 svg {
   @include link-transition;
   @include pop-animation;
 }
+
+h1 a {
+  -webkit-tap-highlight-color: transparent;
+}

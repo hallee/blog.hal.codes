@@ -43,6 +43,7 @@ a.continue {
   margin: 1.65rem 0;
   color: $accent-color;
   font-size: 0.8em;
+  -webkit-tap-highlight-color: transparent;
 
   span {
     display: inline-block;
