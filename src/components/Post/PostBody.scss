@@ -43,6 +43,7 @@ a.continue {
   margin: 1.65rem 0;
   color: $accent-color;
   font-size: 0.8em;
+  -webkit-tap-highlight-color: transparent;
 
   span {
     display: inline-block;
@@ -144,6 +145,7 @@ div, article {
       border-radius: $border-radius;
       padding: 2.4rem 3.2rem;
       overflow: scroll;
+      word-wrap: normal;
 
       @include mobile {
         min-width: auto;
