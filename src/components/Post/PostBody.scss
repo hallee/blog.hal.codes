@@ -110,6 +110,9 @@ div, article {
   img, video {
     padding: 0;
     border-radius: $border-radius;
+    @include mobile {
+      border-radius: 0;
+    }
   }
 
   code {
