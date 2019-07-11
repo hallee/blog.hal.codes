@@ -27,6 +27,7 @@ const Post = ({ pageContext }) => {
 Post.propTypes = {
   pageContext: PropTypes.shape({
     node: PropTypes.object.isRequired,
+    next: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
 };
 
