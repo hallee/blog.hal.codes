@@ -1,4 +1,4 @@
-const path = require('path');
+const url = require('url');
 
 module.exports = {
   siteMetadata: {
@@ -75,8 +75,8 @@ module.exports = {
                 Object.assign({}, node.title, {
                   title: node.title,
                   date: node.meta.published,
-                  url: path.join(site.siteMetadata.siteUrl, node.slug),
-                  guid: path.join(site.siteMetadata.siteUrl, node.slug),
+                  url: url.resolve(site.siteMetadata.siteUrl, node.slug),
+                  guid: url.resolve(site.siteMetadata.siteUrl, node.slug),
                   custom_elements: [{ 'content:encoded': node.body.html }],
                 })
               ))
