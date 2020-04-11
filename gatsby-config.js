@@ -101,7 +101,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'blog.hal.codes RSS feed',
+            title: 'Hal Lee',
           },
         ],
       },
